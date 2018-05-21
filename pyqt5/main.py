@@ -14,7 +14,6 @@ class Window(QtWidgets.QMainWindow):
         self.view()
 
     def view(self):
-        self.setWindowTitle(self.title)
         self.generate_password()
         self.close_app()
 
