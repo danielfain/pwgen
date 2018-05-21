@@ -11,16 +11,19 @@ class Window(QtWidgets.QMainWindow):
         self.setGeometry(50, 50, 500, 300)
         self.setWindowTitle('pwgen')
         self.setWindowIcon(QtGui.QIcon('logo.png'))
-        exit_app = QtWidgets.QAction('Exit', self)
-        exit_app.setShortcut('Ctrl+Q')
-        exit_app.setStatusTip('Close the application')
-        exit_app.triggered.connect(self.close_app)
-        self.statusBar()
-        main_menu = self.menuBar()
-        file_menu = main_menu.addMenu('&File')
-        file_menu.addAction(exit_app)
-
+        self.menu()
         self.view()
+
+    def menu(self):
+        menu_bar = self.menuBar()
+        self.statusBar()
+        file_menu = menu_bar.addMenu('&File')
+
+        exit = QtWidgets.QAction('Exit', self)
+        exit.setShortcut('Ctrl+Q')
+        exit.setStatusTip('Close the application')
+        exit.triggered.connect(self.close_app)
+        file_menu.addAction(exit)
 
     def view(self):
         gen_btn = QtWidgets.QPushButton('Generate', self)
