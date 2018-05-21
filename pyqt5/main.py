@@ -15,11 +15,11 @@ class Window(QtWidgets.QMainWindow):
         self.view()
 
     def menu(self):
-        menu_bar = self.menuBar()
-        self.statusBar()
-        file_menu = menu_bar.addMenu('&File')
+        menu_bar = QtWidgets.QMenuBar()
+        self.setMenuBar(menu_bar)
+        file_menu = menu_bar.addMenu('File')
 
-        exit = QtWidgets.QAction('Exit', self)
+        exit = QtWidgets.QAction(' &Exit', self)
         exit.setShortcut('Ctrl+Q')
         exit.setStatusTip('Close the application')
         exit.triggered.connect(self.close_app)
