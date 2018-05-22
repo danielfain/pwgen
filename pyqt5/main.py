@@ -11,6 +11,7 @@ class Window(QtWidgets.QMainWindow):
         self.title = 'pwgen'
         self.min = 0
         self.max = 64
+        self.setWindowIcon(QtGui.QIcon('logo.png'))
         self.view()
 
     def view(self):
